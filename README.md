@@ -4,6 +4,8 @@
 
 一款基于 `Taro` 框架开发的多端 UI 组件库
 
+> Taro UI 3 目前仍在开发中，在 [`next`](https://github.com/NervJS/taro-ui/tree/next) 分支，已经支持到 Taro v3.0.0-alpha.3，如体验，安装命令 `npm i —save taro-ui@next`
+
 ## 特性
 
 - 基于 `Taro` 开发 UI 组件
@@ -60,6 +62,10 @@ import { AtButton } from 'taro-ui'
 
 [开发计划](./PLANS.md)
 
+## 路线图
+
+![Roadmap][roadmap-image]
+
 ## 贡献
 
 如果你在使用 `Taro UI` 时遇到问题，或者有好的建议，欢迎给我们提 `Issue` 或 `Pull Request`。在开始之前，请阅读 [贡献指南](https://github.com/NervJS/taro-ui/blob/master/.github/CONTRIBUTING.md)
@@ -67,7 +73,6 @@ import { AtButton } from 'taro-ui'
 ## License
 
 MIT
-
 
 [npm-version-image]: https://img.shields.io/npm/v/taro-ui.svg?style=flat-square
 [npm-version-url]: https://www.npmjs.com/package/taro-ui
@@ -77,3 +82,4 @@ MIT
 [david-dm-url]: https://david-dm.org/NervJS/taro-ui
 [license-image]: https://img.shields.io/github/license/NervJS/taro-ui?style=flat-square
 [license-url]: https://github.com/NervJS/taro-ui/blob/master/LICENSE
+[roadmap-image]: ./docs/assets/taro-ui-roadmap.svg

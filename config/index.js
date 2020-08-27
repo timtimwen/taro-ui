@@ -2,43 +2,41 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const isBuildComponent = process.env.TARO_BUILD_TYPE === 'component'
+
 const config = {
   projectName: 'taro-ui',
   designWidth: 750,
   sourceRoot: 'src',
-  outputRoot: 'dist',
-  plugins: {
-    babel: {
-      sourceMap: true,
-      presets: [
-        'env'
-      ],
-      plugins: [
-        'transform-class-properties',
-        'transform-decorators-legacy',
-        'transform-object-rest-spread'
-      ]
-    }
+  outputRoot: isBuildComponent ? 'dist' : `dist/${process.env.TARO_ENV}`,
+  plugins: {},
+  babel: {
+    sourceMap: true,
+    presets: [
+      'env'
+    ],
+    plugins: [
+      'transform-class-properties',
+      'transform-decorators-legacy',
+      'transform-object-rest-spread'
+    ]
   },
-  defineConstants: {
-  },
+  defineConstants: {},
   alias: {
-    'taro-ui': path.resolve(__dirname, '../src/ui.js'),
+    'taro-ui': path.resolve(__dirname, '../src/ui.ts'),
   },
-  weapp: {},
+  mini: {},
   h5: {
     staticDirectory: 'static',
-    module: {
-      postcss: {
-        autoprefixer: {
-          enable: true
-        }
+    postcss: {
+      autoprefixer: {
+        enable: true
       }
     }
   },
 }
 
-if (process.env.TARO_BUILD_TYPE === 'component') {
+if (isBuildComponent) {
   Object.assign(config.h5, {
     enableSourceMap: false,
     enableExtract: false,
